@@ -27,19 +27,19 @@ export function Reports() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold">Rapport</h1>
           <p className="text-muted-foreground">Omsetning og statistikk</p>
         </div>
-        <div className="flex gap-2">
-          <Button variant="outline" onClick={handleExportCustomers}>
+        <div className="flex flex-wrap gap-2">
+          <Button variant="outline" size="sm" className="text-xs sm:text-sm" onClick={handleExportCustomers}>
             <Download className="h-4 w-4" />
-            Eksporter kunder
+            <span className="hidden xs:inline">Eksporter</span> kunder
           </Button>
-          <Button variant="outline" onClick={handleExportAgreements}>
+          <Button variant="outline" size="sm" className="text-xs sm:text-sm" onClick={handleExportAgreements}>
             <Download className="h-4 w-4" />
-            Eksporter avtaler
+            <span className="hidden xs:inline">Eksporter</span> avtaler
           </Button>
         </div>
       </div>

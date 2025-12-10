@@ -46,12 +46,12 @@ export function Invoices() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold">Faktura</h1>
           <p className="text-muted-foreground">Avtaler som må faktureres</p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 self-start sm:self-auto">
           <span className="text-sm text-muted-foreground">Vis neste</span>
           <Select
             value={days}
@@ -63,7 +63,7 @@ export function Invoices() {
               { value: '60', label: '60 dager' },
               { value: '90', label: '90 dager' },
             ]}
-            className="w-32"
+            className="w-28 sm:w-32"
           />
         </div>
       </div>

@@ -95,12 +95,12 @@ export function Licenses() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold">Lisenser</h1>
           <p className="text-muted-foreground">Tredjepartslisenser og programvare</p>
         </div>
-        <Button onClick={openCreateDialog}>
+        <Button onClick={openCreateDialog} size="sm" className="self-start sm:self-auto">
           <Plus className="h-4 w-4" />
           Ny lisens
         </Button>

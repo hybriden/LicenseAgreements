@@ -2,73 +2,73 @@
 
 @theme {
   /*
-   * WCAG 2.1 AA Compliant Color Palette
-   * All text colors meet 4.5:1 contrast ratio minimum
-   * Large text (18px+) meets 3:1 contrast ratio
+   * Epinova-inspired Design System
+   * Clean, professional Nordic design with teal accents
+   * WCAG 2.1 AA Compliant
    */
 
-  /* Base colors - high contrast */
-  --color-background: oklch(98% 0.002 250);
-  --color-foreground: oklch(13% 0.02 260);
-  --color-card: oklch(100% 0 0);
-  --color-card-foreground: oklch(13% 0.02 260);
-  --color-popover: oklch(100% 0 0);
-  --color-popover-foreground: oklch(13% 0.02 260);
+  /* Base colors - Epinova style */
+  --color-background: #ffffff;
+  --color-foreground: #161616;
+  --color-card: #ffffff;
+  --color-card-foreground: #161616;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #161616;
 
-  /* Primary - Deep indigo (WCAG AA compliant) */
-  --color-primary: oklch(45% 0.25 265);
-  --color-primary-foreground: oklch(100% 0 0);
+  /* Primary - Epinova Teal */
+  --color-primary: #146e6e;
+  --color-primary-foreground: #ffffff;
 
-  /* Secondary - Darker slate for better contrast */
-  --color-secondary: oklch(94% 0.01 260);
-  --color-secondary-foreground: oklch(20% 0.02 260);
+  /* Secondary - Light gray background */
+  --color-secondary: #f6f6f6;
+  --color-secondary-foreground: #161616;
 
-  /* Muted - Adjusted for readability */
-  --color-muted: oklch(95% 0.005 260);
-  --color-muted-foreground: oklch(40% 0.02 260);
+  /* Muted - Subtle backgrounds */
+  --color-muted: #f4f4f4;
+  --color-muted-foreground: #5a5a5a;
 
-  /* Accent - Deeper teal for contrast */
-  --color-accent: oklch(90% 0.04 200);
-  --color-accent-foreground: oklch(20% 0.05 200);
+  /* Accent - Epinova warm beige/cream */
+  --color-accent: #e8ddd4;
+  --color-accent-foreground: #161616;
 
-  /* Destructive - Darker red for accessibility */
-  --color-destructive: oklch(45% 0.22 25);
-  --color-destructive-foreground: oklch(100% 0 0);
+  /* Destructive - Red for errors */
+  --color-destructive: #c53030;
+  --color-destructive-foreground: #ffffff;
 
-  /* Success - For positive states */
-  --color-success: oklch(45% 0.2 150);
-  --color-success-foreground: oklch(100% 0 0);
+  /* Success - Green for positive states */
+  --color-success: #2f855a;
+  --color-success-foreground: #ffffff;
 
   /* Warning - For cautionary states */
-  --color-warning: oklch(55% 0.18 85);
-  --color-warning-foreground: oklch(15% 0.05 85);
+  --color-warning: #c05621;
+  --color-warning-foreground: #ffffff;
 
-  /* Borders and inputs - slightly darker for visibility */
-  --color-border: oklch(85% 0.01 260);
-  --color-input: oklch(90% 0.01 260);
-  --color-ring: oklch(45% 0.25 265);
+  /* Borders and inputs */
+  --color-border: #e5e5e5;
+  --color-input: #f6f6f6;
+  --color-ring: #146e6e;
 
-  /* Chart colors - WCAG compliant */
-  --color-chart-1: oklch(45% 0.25 265);
-  --color-chart-2: oklch(45% 0.2 180);
-  --color-chart-3: oklch(50% 0.18 140);
-  --color-chart-4: oklch(50% 0.15 85);
-  --color-chart-5: oklch(45% 0.22 320);
+  /* Chart colors - Epinova palette */
+  --color-chart-1: #146e6e;
+  --color-chart-2: #5a3f46;
+  --color-chart-3: #e8ddd4;
+  --color-chart-4: #2f855a;
+  --color-chart-5: #c05621;
 
-  /* Sidebar - maintaining dark theme */
-  --color-sidebar: oklch(16% 0.03 260);
-  --color-sidebar-foreground: oklch(95% 0.01 260);
-  --color-sidebar-muted: oklch(60% 0.02 260);
-  --color-sidebar-accent: oklch(55% 0.25 265);
+  /* Sidebar - Epinova teal theme */
+  --color-sidebar: #146e6e;
+  --color-sidebar-foreground: #ffffff;
+  --color-sidebar-muted: rgba(255, 255, 255, 0.7);
+  --color-sidebar-accent: rgba(255, 255, 255, 0.15);
 
-  /* Radius - slightly softer */
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-2xl: 1.25rem;
+  /* Radius - clean, minimal */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
 
-  /* Font */
+  /* Font - Clean sans-serif like Formular */
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 
   /* Spacing scale for consistency */
@@ -91,6 +91,7 @@
     font-feature-settings: "rlig" 1, "calt" 1;
     line-height: 1.6;
     letter-spacing: -0.011em;
+    font-weight: 300;
   }
 
   /* Improved focus states for accessibility */
@@ -104,9 +105,9 @@
     @apply focus:top-4 transition-all;
   }
 
-  /* Better heading hierarchy */
+  /* Better heading hierarchy - Epinova uses light weight headings */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight text-foreground;
+    @apply font-normal tracking-tight text-foreground;
     line-height: 1.2;
   }
 
@@ -138,21 +139,21 @@
 }
 
 @layer utilities {
-  /* Gradients with better contrast */
+  /* Gradients - Epinova teal theme */
   .gradient-primary {
-    background: linear-gradient(135deg, oklch(45% 0.25 265) 0%, oklch(40% 0.22 280) 100%);
+    background: linear-gradient(135deg, #146e6e 0%, #0d5555 100%);
   }
 
   .gradient-success {
-    background: linear-gradient(135deg, oklch(45% 0.2 150) 0%, oklch(40% 0.18 140) 100%);
+    background: linear-gradient(135deg, #2f855a 0%, #276749 100%);
   }
 
   .gradient-warning {
-    background: linear-gradient(135deg, oklch(55% 0.18 85) 0%, oklch(50% 0.2 70) 100%);
+    background: linear-gradient(135deg, #c05621 0%, #9c4221 100%);
   }
 
   .gradient-danger {
-    background: linear-gradient(135deg, oklch(45% 0.22 25) 0%, oklch(40% 0.25 15) 100%);
+    background: linear-gradient(135deg, #c53030 0%, #9b2c2c 100%);
   }
 
   /* Subtle card shadows */
@@ -182,7 +183,7 @@
     right: 0;
     width: 120px;
     height: 120px;
-    background: radial-gradient(circle at top right, oklch(100% 0 0 / 0.1), transparent 70%);
+    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1), transparent 70%);
     pointer-events: none;
   }
 

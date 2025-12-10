@@ -32,41 +32,41 @@ interface SidebarProps {
 function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <>
-      {/* Logo */}
+      {/* Logo - Epinova style with E icon */}
       <div className="flex h-16 items-center gap-3 px-6 border-b border-white/10">
         <div
-          className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg shadow-indigo-500/30"
+          className="flex h-10 w-10 items-center justify-center"
           aria-hidden="true"
         >
+          {/* Epinova-style E logo */}
           <svg
-            viewBox="0 0 24 24"
+            viewBox="0 0 40 40"
             fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-5 w-5"
+            className="h-10 w-10"
           >
-            <path d="M4 6h10v4H4z" />
-            <path d="M14 10v8" />
-            <circle cx="18" cy="8" r="2" />
+            <rect width="40" height="40" fill="transparent" />
+            <path
+              d="M8 8h24v4H12v8h16v4H12v8h20v4H8V8z"
+              fill="currentColor"
+              className="text-white"
+            />
           </svg>
         </div>
         <div>
-          <h1 className="text-lg font-bold tracking-tight">Epinova</h1>
-          <p className="text-[11px] text-slate-400 uppercase tracking-wider font-medium">Lisenser</p>
+          <h1 className="text-lg font-light tracking-tight text-white">Epinova</h1>
+          <p className="text-[11px] text-white/60 uppercase tracking-wider font-normal">Lisenser</p>
         </div>
       </div>
 
       {/* Navigation */}
       <nav className="p-3 space-y-1 flex-1 overflow-y-auto" aria-label="Hovedmeny">
         <p
-          className="px-3 py-2 text-[11px] font-semibold text-slate-500 uppercase tracking-wider"
+          className="px-3 py-2 text-[11px] font-medium text-white/50 uppercase tracking-wider"
           id="nav-menu-label"
         >
           Meny
         </p>
-        <ul className="space-y-1" role="list" aria-labelledby="nav-menu-label">
+        <ul className="space-y-0.5" role="list" aria-labelledby="nav-menu-label">
           {navItems.map((item) => (
             <li key={item.to}>
               <NavLink
@@ -75,11 +75,11 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
                 onClick={onNavigate}
                 className={({ isActive }) =>
                   cn(
-                    'flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium transition-all duration-200',
-                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900',
+                    'flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-normal transition-all duration-200',
+                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-sidebar',
                     isActive
-                      ? 'bg-gradient-to-r from-indigo-600 to-indigo-700 text-white shadow-lg shadow-indigo-600/30'
-                      : 'text-slate-300 hover:bg-slate-800 hover:text-white'
+                      ? 'bg-white/15 text-white'
+                      : 'text-white/80 hover:bg-white/10 hover:text-white'
                   )
                 }
                 aria-label={item.description}
@@ -94,9 +94,9 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
 
       {/* Bottom section */}
       <div className="p-4 border-t border-white/10">
-        <div className="rounded-xl bg-slate-800/50 p-4">
-          <p className="text-sm font-semibold text-slate-200">Epinova AS</p>
-          <p className="text-xs text-slate-400 mt-1">License Management System</p>
+        <div className="rounded-md bg-white/10 p-4">
+          <p className="text-sm font-normal text-white">Epinova AS</p>
+          <p className="text-xs text-white/60 mt-1">License Management System</p>
         </div>
       </div>
     </>
@@ -136,9 +136,9 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
 
   return (
     <>
-      {/* Desktop Sidebar */}
+      {/* Desktop Sidebar - Epinova teal */}
       <aside
-        className="fixed left-0 top-0 z-40 h-screen w-64 bg-slate-900 text-white hidden lg:flex lg:flex-col"
+        className="fixed left-0 top-0 z-40 h-screen w-64 bg-sidebar text-white hidden lg:flex lg:flex-col"
         role="navigation"
         aria-label="Hovednavigasjon"
       >
@@ -154,10 +154,10 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
         />
       )}
 
-      {/* Mobile Sidebar */}
+      {/* Mobile Sidebar - Epinova teal */}
       <aside
         className={cn(
-          'fixed left-0 top-0 z-50 h-screen w-72 bg-slate-900 text-white flex flex-col lg:hidden',
+          'fixed left-0 top-0 z-50 h-screen w-72 bg-sidebar text-white flex flex-col lg:hidden',
           'transform transition-transform duration-300 ease-in-out',
           isOpen ? 'translate-x-0' : '-translate-x-full'
         )}
@@ -168,7 +168,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+          className="absolute top-4 right-4 p-2 rounded-md text-white/60 hover:text-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
           aria-label="Lukk meny"
         >
           <X className="h-5 w-5" />
@@ -179,4 +179,3 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
     </>
   )
 }
-
